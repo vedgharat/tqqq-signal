@@ -7,7 +7,11 @@ var App = {
     BARS: {'1mo':22,'3mo':63,'6mo':126,'1y':252,'2y':504},
     FETCH: {'1mo':'1y','3mo':'1y','6mo':'1y','1y':'2y','2y':'5y'},
 
-    init: function(){this.bind();this.load()},
+    init: function(){
+        this.bind();
+        this.setupAutoRefresh(parseInt(document.getElementById('autoRefresh').value,10)||0);
+        this.load();
+    },
 
     bind: function(){
         var S=this;
